@@ -4,6 +4,23 @@ let topRow;
 let gridNum;
 let squareDiv;
 
+function getRandomInt(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
+}
+
+let red = 0;
+let green = 0;
+let blue = 255;
+
+function generateColor() {
+    red = getRandomInt(0, 255);
+    green = getRandomInt(0, 255);
+    blue = getRandomInt(0, 255);
+    return "rgb(" + red + "," + green + "," + blue +")"
+};
+
 function multiply16Row(gridNum) {
     gridNum = gridNum || 16;
     for (let i = 0; i < gridNum; i++) {
@@ -32,7 +49,7 @@ allSquares = Array.from(allSquares);
 function addHover() {
     for (let square of allSquares) {
         square.addEventListener("mouseover", (event) => {
-            event.target.style.backgroundColor = "blue";
+            event.target.style.backgroundColor = generateColor();
             setTimeout(() => {
                 event.target.style.backgroundColor = "";
             }, 1000);
