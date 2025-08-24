@@ -7,7 +7,7 @@ let squareDiv;
 function multiply16Row() {
     for (let i = 0; i < 16; i++) {
         squareDiv = document.createElement("div");
-        squareDiv.style.cssText = "width: 46px; height: 46px; border: black solid 2px";
+        squareDiv.style.cssText = "flex-basis: 100%; border: black solid 2px";
         topRow.appendChild(squareDiv);
         squareDiv.classList.add("square");
     }
@@ -16,7 +16,7 @@ function multiply16Row() {
 function createGrid() {
     for (let i = 0; i < 16; i++) {
         topRow = document.createElement("div");
-        topRow.style.cssText = "display: flex;";
+        topRow.style.cssText = "display: flex; flex: 1; flex-direction: column";
         container.appendChild(topRow);
         multiply16Row();
     }

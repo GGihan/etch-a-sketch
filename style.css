@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: Roboto, sans-serif;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex: 0 0 960px;
+    width: 960px;
+}
+
+button {
+    height: 20px;
+}
