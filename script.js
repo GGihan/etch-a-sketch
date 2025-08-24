@@ -23,3 +23,15 @@ function createGrid() {
 }
 
 createGrid();
+
+let allSquares = document.getElementsByClassName("square");
+allSquares = Array.from(allSquares);
+
+for (let square of allSquares) {
+    square.addEventListener("mouseover", (event) => {
+        event.target.style.backgroundColor = "blue";
+        setTimeout(() => {
+            event.target.style.backgroundColor = "";
+        }, 1000);
+    });
+}
